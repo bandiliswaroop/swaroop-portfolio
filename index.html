@@ -33,7 +33,10 @@
       <div class="container hero-content">
         <div class="hero-text">
           <p class="hero-greeting">Hello, I'm</p>
-          <h1 class="hero-title">Santhi Swaroop <span class="accent">Bandili</span></h1>
+          <h1 class="hero-title">
+            <span id="hero-title-main">Santhi Swaroop</span>
+            <span id="hero-title-accent" class="accent">Bandili</span>
+          </h1>
           <p class="hero-tagline">Computer Science Engineer · Java · SQL · Android Development</p>
           <p class="hero-objective">Seeking a <strong>Software Developer</strong> role to build scalable and impactful solutions.</p>
           <div class="hero-cta">
@@ -68,12 +71,11 @@
     <section class="section about" id="about">
       <div class="container">
         <h2 class="section-title">About Me</h2>
-        <div class="about-grid">
-          <div class="about-content">
-            <p class="about-lead">Computer Science Engineering student skilled in <strong>Java</strong>, <strong>SQL</strong>, and <strong>Android development</strong>.</p>
-            <p>I'm focused on building scalable and impactful solutions. My experience spans full-stack development, machine learning models, and mobile apps—with a strong foundation in object-oriented programming and databases.</p>
-            <p>I bring <strong>communication</strong>, <strong>problem-solving</strong>, <strong>teamwork</strong>, <strong>time management</strong>, and <strong>leadership</strong> to every project.</p>
-          </div>
+        <div class="about-inner">
+          <p class="about-lead">Computer Science Engineering student skilled in <strong>Java</strong>, <strong>SQL</strong>, and <strong>Android development</strong>.</p>
+          <p>I'm focused on building scalable and impactful solutions. My experience spans full-stack development, machine learning models, and mobile apps—with a strong foundation in object-oriented programming and databases.</p>
+          <p>I actively <strong>learn, adopt, and combine modern AI tools</strong> with my development workflow—using them to speed up research, prototyping, debugging, and documentation so that projects move faster while staying high quality.</p>
+          <p>This ability to <strong>quickly adapt to new tools and AI systems</strong> helps me stay aligned with the current AI trend and make my work more efficient, data‑driven, and productive for the teams I work with.</p>
         </div>
       </div>
     </section>
@@ -82,6 +84,7 @@
       <div class="container">
         <h2 class="section-title">Education</h2>
         <div class="timeline">
+          <div class="timeline-line"></div>
           <article class="timeline-item">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
@@ -108,21 +111,37 @@
       <div class="container">
         <h2 class="section-title">Technical Skills</h2>
         <div class="skills-grid">
-          <div class="skill-card">
-            <h4>Programming</h4>
-            <ul>
-              <li>Java</li>
-            </ul>
+          <div class="skill-card skill-card--programming">
+            <img
+              src="assets/java.png"
+              alt="Java logo"
+              class="skill-java-logo"
+            >
+            <span class="skill-java-label">Java</span>
           </div>
-          <div class="skill-card">
+          <div class="skill-card skill-card--database">
+            <img
+              src="assets/sql.png"
+              alt="SQL logo"
+              class="skill-sql-logo"
+            >
             <h4>Database</h4>
             <ul>
               <li>SQL</li>
               <li>MySQL</li>
             </ul>
           </div>
-          <div class="skill-card">
+          <div class="skill-card skill-card--tools">
             <h4>Frameworks & Tools</h4>
+            <div class="tools-orbit">
+              <img src="assets/android.png" alt="Android Studio" class="tool-icon tool-icon--android">
+              <img src="assets/vscode.png" alt="VS Code" class="tool-icon tool-icon--vscode">
+              <img src="assets/github.png" alt="GitHub" class="tool-icon tool-icon--github">
+              <img src="assets/figma.png" alt="Figma" class="tool-icon tool-icon--figma">
+              <img src="assets/eclipse.png" alt="Eclipse" class="tool-icon tool-icon--eclipse">
+              <img src="assets/ai.png" alt="AI Tools" class="tool-icon tool-icon--ai">
+              <img src="assets/ppt.png" alt="PowerPoint" class="tool-icon tool-icon--ppt">
+            </div>
             <ul>
               <li>Android Studio</li>
               <li>Visual Studio Code</li>
@@ -133,14 +152,18 @@
               <li>PowerPoint</li>
             </ul>
           </div>
-          <div class="skill-card">
+          <div class="skill-card skill-card--interest">
             <h4>Areas of Interest</h4>
+            <div class="interest-logos">
+              <img src="assets/oops.png" alt="OOPS" class="interest-logo interest-logo--oops">
+              <img src="assets/dbms.png" alt="DBMS" class="interest-logo interest-logo--dbms">
+            </div>
             <ul>
               <li>Object-Oriented Programming</li>
               <li>DBMS</li>
             </ul>
           </div>
-          <div class="skill-card">
+          <div class="skill-card skill-card--os">
             <h4>Operating System</h4>
             <ul>
               <li>Windows</li>
@@ -154,36 +177,119 @@
       <div class="container">
         <h2 class="section-title">Projects</h2>
         <div class="projects-grid">
-          <article class="project-card" data-aos>
-            <div class="project-header">
-              <span class="project-date">March 2024</span>
-              <h3>Enhancing Patient Health Prediction using CNN-LSTM</h3>
+          <div class="project-row" data-aos>
+            <div class="project-preview project-preview-cnn">
+              <embed src="assets/cnn-lstm-preview.pdf" type="application/pdf" class="project-pdf-preview">
+              <div class="project-preview-overlay">
+                <span class="project-preview-label">Preview</span>
+                <span class="project-preview-text">CNN-LSTM Health Dashboard</span>
+              </div>
             </div>
-            <ul class="project-list">
-              <li>Designed a hybrid <strong>CNN-LSTM</strong> model for time-series health forecasting, achieving higher accuracy than traditional LSTM and GRU models.</li>
-              <li>Conducted performance comparison with Transformer-based architectures, achieving <strong>15% higher</strong> prediction accuracy.</li>
-            </ul>
-          </article>
-          <article class="project-card" data-aos>
-            <div class="project-header">
-              <span class="project-date">May 2024</span>
-              <h3>Online Job Application and Recruitment Management System</h3>
+            <article class="project-card">
+              <div class="project-header">
+                <span class="project-date">March 2024</span>
+                <h3>Enhancing Patient Health Prediction using CNN-LSTM</h3>
+              </div>
+              <ul class="project-list">
+                <li>Designed a hybrid <strong>CNN-LSTM</strong> model for time-series health forecasting, achieving higher accuracy than traditional LSTM and GRU models.</li>
+                <li>Conducted performance comparison with Transformer-based architectures, achieving <strong>15% higher</strong> prediction accuracy.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="project-row" data-aos>
+            <div class="project-preview project-preview-job">
+              <video class="project-video" muted preload="metadata" autoplay loop playsinline>
+                <source src="assets/videos/job-portal-preview.mp4" type="video/mp4">
+              </video>
+              <div class="project-preview-overlay">
+                <span class="project-preview-label">Preview</span>
+                <span class="project-preview-text">Job Portal UI Flow</span>
+              </div>
             </div>
-            <ul class="project-list">
-              <li>Developed a full-stack job portal with <strong>role-based authentication</strong> for Admin, Employer, and Job Seeker using PHP and MySQL.</li>
-              <li>Integrated secure login, resume uploads, job posting, and application tracking to streamline the recruitment process.</li>
-            </ul>
-          </article>
-          <article class="project-card" data-aos>
-            <div class="project-header">
-              <span class="project-date">Oct 2025</span>
-              <h3>Smart Healthcare App</h3>
+            <article class="project-card">
+              <div class="project-header">
+                <span class="project-date">May 2024</span>
+                <h3>Online Job Application and Recruitment Management System</h3>
+              </div>
+              <ul class="project-list">
+                <li>Developed a full-stack job portal with <strong>role-based authentication</strong> for Admin, Employer, and Job Seeker using PHP and MySQL.</li>
+                <li>Integrated secure login, resume uploads, job posting, and application tracking to streamline the recruitment process.</li>
+                <li>Source code available on <a href="https://github.com/bandiliswaroop/JOB_PORTAL" target="_blank" rel="noopener noreferrer">GitHub</a>.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="project-row" data-aos>
+            <div class="project-preview project-preview-healthcare">
+              <video class="project-video" muted preload="metadata" autoplay loop playsinline>
+                <source src="assets/videos/smart-healthcare-preview.mp4" type="video/mp4">
+              </video>
+              <div class="project-preview-overlay">
+                <span class="project-preview-label">Preview</span>
+                <span class="project-preview-text">Smart Healthcare App Screen</span>
+              </div>
             </div>
-            <ul class="project-list">
-              <li>Built an <strong>Android-based</strong> Smart Healthcare app with hospital and lab search, appointment booking, and emergency alerts.</li>
-              <li>Integrated Google Maps API and real-time notifications, enhancing critical response time by <strong>40%</strong>.</li>
-            </ul>
-          </article>
+            <article class="project-card">
+              <div class="project-header">
+                <span class="project-date">Oct 2025</span>
+                <h3>Smart Healthcare App</h3>
+              </div>
+              <ul class="project-list">
+                <li>Built an <strong>Android-based</strong> Smart Healthcare app with hospital and lab search, appointment booking, and emergency alerts.</li>
+                <li>Integrated Google Maps API and real-time notifications, enhancing critical response time by <strong>40%</strong>.</li>
+                <li>Source code available on <a href="https://github.com/bandiliswaroop/smart_healthcare_app" target="_blank" rel="noopener noreferrer">GitHub</a>.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="project-row" data-aos>
+            <div class="project-preview project-preview-cnn">
+              <video class="project-video" muted preload="metadata" autoplay loop playsinline>
+                <source src="assets/videos/movie-review-search-preview.mp4" type="video/mp4">
+              </video>
+              <div class="project-preview-overlay">
+                <span class="project-preview-label">Preview</span>
+                <span class="project-preview-text">Movie Review Search Web App</span>
+              </div>
+            </div>
+            <article class="project-card">
+              <div class="project-header">
+                <span class="project-date">2024</span>
+                <h3>Movie Review Search</h3>
+              </div>
+              <ul class="project-list">
+                <li>Built a responsive web app that lets users search for movies and instantly view reviews and key details.</li>
+                <li>Implemented dynamic search and UI using HTML, CSS, and JavaScript, and deployed the project on GitHub Pages.</li>
+                <li>Source code available on <a href="https://github.com/bandiliswaroop/Movie-review-search" target="_blank" rel="noopener noreferrer">GitHub</a>.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="project-row" data-aos>
+            <div class="project-preview project-preview-healthcare">
+              <img
+                src="assets/videos/smart-screenshot-manager-preview.jpg"
+                alt="Smart Screenshot Manager preview"
+                class="project-image"
+              >
+              <div class="project-preview-overlay">
+                <span class="project-preview-label">Preview</span>
+                <span class="project-preview-text">Smart Screenshot Manager Android App</span>
+              </div>
+            </div>
+            <article class="project-card">
+              <div class="project-header">
+                <span class="project-date">2025</span>
+                <h3>Smart Screenshot Manager</h3>
+              </div>
+              <ul class="project-list">
+                <li>Developed an Android app that listens for new screenshots and shows a smart bubble with quick actions like full-screen ticket display, delete after share, and text extraction.</li>
+                <li>Implemented floating mini-window overlays, lock-screen display for QR tickets, scheduled deletion using WorkManager, and configurable sounds for countdown and delete events.</li>
+                <li>Source code available on <a href="https://github.com/bandiliswaroop/smart-screenshot-manager" target="_blank" rel="noopener noreferrer">GitHub</a>.</li>
+              </ul>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -192,26 +298,26 @@
       <div class="container">
         <h2 class="section-title">Certifications</h2>
         <div class="certs-list">
-          <a href="https://www.hackerrank.com" target="_blank" rel="noopener noreferrer" class="cert-item">
+          <div class="cert-item">
             <span class="cert-name">Java (Basic)</span>
             <span class="cert-issuer">HackerRank</span>
-          </a>
-          <a href="https://www.oracle.com" target="_blank" rel="noopener noreferrer" class="cert-item">
+          </div>
+          <div class="cert-item">
             <span class="cert-name">Oracle Cloud Infrastructure 2024 Certified AI Foundations Associate</span>
             <span class="cert-issuer">Oracle</span>
-          </a>
-          <a href="https://www.accenture.com" target="_blank" rel="noopener noreferrer" class="cert-item">
+          </div>
+          <div class="cert-item">
             <span class="cert-name">Data Analytics and Visualization Job Simulation</span>
             <span class="cert-issuer">Accenture</span>
-          </a>
-          <a href="https://nptel.ac.in" target="_blank" rel="noopener noreferrer" class="cert-item">
+          </div>
+          <div class="cert-item">
             <span class="cert-name">Internet of Things Elite Certificate</span>
             <span class="cert-issuer">NPTEL</span>
-          </a>
-          <a href="https://www.accenture.com" target="_blank" rel="noopener noreferrer" class="cert-item">
+          </div>
+          <div class="cert-item">
             <span class="cert-name">Introduction to Technology Apprenticeship Job Simulation</span>
             <span class="cert-issuer">Accenture</span>
-          </a>
+          </div>
         </div>
       </div>
     </section>
