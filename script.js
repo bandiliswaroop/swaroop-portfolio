@@ -107,6 +107,100 @@
     if (yearEl) yearEl.textContent = new Date().getFullYear();
   }
 
+  // ===== Hero image 3D tilt =====
+  function initHero3D() {
+    const heroWrap = document.querySelector('.hero-image-wrap');
+    const heroImg = document.querySelector('.hero-image');
+    if (!heroWrap || !heroImg) return;
+
+    const maxRotate = 18; // degrees
+
+    heroWrap.addEventListener('mousemove', function (e) {
+      const rect = heroWrap.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const rotateY = ((x / rect.width) - 0.5) * maxRotate * 2;
+      const rotateX = ((y / rect.height) - 0.5) * -maxRotate * 2;
+
+      heroImg.style.transform = `rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateZ(20px)`;
+    });
+
+    heroWrap.addEventListener('mouseleave', function () {
+      heroImg.style.transform = 'rotateX(0deg) rotateY(0deg) translateZ(0)';
+    });
+  }
+
+  // ===== Hero name typing effect =====
+  function initHeroTyping() {
+    const mainEl = document.getElementById('hero-title-main');
+    const accentEl = document.getElementById('hero-title-accent');
+    if (!mainEl || !accentEl) return;
+
+    const mainText = mainEl.getAttribute('data-full') || mainEl.textContent.trim();
+    const accentText = accentEl.getAttribute('data-full') || accentEl.textContent.trim();
+    mainEl.setAttribute('data-full', mainText);
+    accentEl.setAttribute('data-full', accentText);
+
+    const speed = 120; // ms per character (medium / natural)
+    const loopPause = 1200; // pause after full name before restarting
+
+    function runOnce() {
+      mainEl.textContent = '';
+      accentEl.textContent = '';
+
+      let i = 0;
+      let j = 0;
+
+      function typeNext() {
+        if (i < mainText.length) {
+          mainEl.textContent += mainText.charAt(i++);
+          setTimeout(typeNext, speed);
+        } else if (j < accentText.length) {
+          accentEl.textContent += accentText.charAt(j++);
+          setTimeout(typeNext, speed);
+        } else {
+          setTimeout(runOnce, loopPause);
+        }
+      }
+
+      setTimeout(typeNext, 400);
+    }
+
+    runOnce();
+  }
+
+  // ===== Project preview videos (auto play loop) =====
+  function initProjectVideos() {
+    const videos = document.querySelectorAll('.project-video');
+    videos.forEach(function (video) {
+      if (!video) return;
+      video.loop = true;
+      video.muted = true;
+      video.play().catch(function () {});
+    });
+  }
+
+  // ===== Education timeline animation on scroll =====
+  function initEducationAnimation() {
+    const educationSection = document.getElementById('education');
+    if (!educationSection || !('IntersectionObserver' in window)) return;
+
+    const observer = new IntersectionObserver(
+      function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            educationSection.classList.add('education-animate');
+            obs.disconnect();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(educationSection);
+  }
+
   // ===== Run =====
   applyLinks();
   initNav();
@@ -114,4 +208,8 @@
   initReveal();
   initSmoothScroll();
   setYear();
+  initHero3D();
+  initHeroTyping();
+  initProjectVideos();
+  initEducationAnimation();
 })();
