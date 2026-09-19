@@ -1349,6 +1349,148 @@ img, video, embed {
   color: var(--text-dim);
 }
 
+/* Interactive UI Mockup for ARMS Watcher */
+.mockup-body-bot {
+  background: radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.15), transparent 50%),
+              radial-gradient(circle at 85% 85%, rgba(99, 102, 241, 0.18), transparent 50%),
+              #040711;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.mock-bot-ui {
+  width: 100%;
+  max-width: 330px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(16, 185, 129, 0.12);
+  transition: transform var(--transition), border-color var(--transition);
+}
+
+.project-showcase-card:hover .mock-bot-ui {
+  transform: translateY(-2px);
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+.mock-bot-bubble {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 0.45rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  color: #34d399;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mock-bot-terminal {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.85rem;
+  font-size: 0.72rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+.bot-log-highlight {
+  color: #38bdf8;
+}
+
+.bot-log-success {
+  color: #4ade80;
+  font-weight: 600;
+}
+
+/* Interactive UI Mockup for Bank Management System */
+.mockup-body-bank {
+  background: radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15), transparent 50%),
+              radial-gradient(circle at 80% 70%, rgba(99, 102, 241, 0.12), transparent 50%),
+              #050a1a;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.mock-bank-ui {
+  width: 100%;
+  max-width: 310px;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(59, 130, 246, 0.1);
+  transition: transform var(--transition), border-color var(--transition);
+}
+
+.project-showcase-card:hover .mock-bank-ui {
+  transform: translateY(-2px);
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.mock-ui-chip--blue {
+  color: #93c5fd;
+  background: rgba(59, 130, 246, 0.12);
+  border-color: rgba(59, 130, 246, 0.3) !important;
+}
+
+.mock-ui-badge--blue {
+  color: #93c5fd;
+  background: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.25) !important;
+}
+
+.mock-bank-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.75rem;
+}
+
+.mock-bank-item {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0;
+}
+
+.mock-bank-item--active {
+  color: #93c5fd;
+  font-weight: 600;
+}
+
+.mock-bank-icon {
+  color: #475569;
+  font-size: 0.68rem;
+}
+
+.mock-bank-item--active .mock-bank-icon {
+  color: #60a5fa;
+}
+
 .project-overlay-glow {
   position: absolute;
   inset: 0;
